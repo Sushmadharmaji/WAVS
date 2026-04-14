@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 160 60% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 160 40% 88%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 160 40% 88%;
+
+    --primary: 160 100% 45%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 195 100% 45%;
+    --secondary-foreground: 220 20% 6%;
+
+    --muted: 220 15% 16%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 195 100% 45%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 100% 55%;
+    --warning-foreground: 220 20% 6%;
+
+    --success: 160 100% 40%;
+    --success-foreground: 220 20% 6%;
+
+    --info: 195 100% 50%;
+    --info-foreground: 220 20% 6%;
+
+    --severity-critical: 0 85% 55%;
+    --severity-high: 15 90% 55%;
+    --severity-medium: 38 100% 55%;
+    --severity-low: 195 100% 50%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 14%;
+    --ring: 160 100% 45%;
+
+    --radius: 0.5rem;
+
+    --glow-primary: 0 0 20px hsl(160 100% 45% / 0.3);
+    --glow-accent: 0 0 20px hsl(195 100% 45% / 0.3);
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 160 40% 88%;
+    --sidebar-primary: 160 100% 45%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 15% 14%;
+    --sidebar-accent-foreground: 160 40% 88%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 160 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-display;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  .text-glow {
+    text-shadow: 0 0 10px hsl(160 100% 45% / 0.5);
+  }
+  .border-glow {
+    box-shadow: inset 0 0 20px hsl(160 100% 45% / 0.05), var(--glow-primary);
+  }
+
+  .scan-line {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(160 100% 45% / 0.05) 50%,
+      transparent 100%
+    );
+    animation: scanline 3s linear infinite;
+  }
+
+  @keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 5px hsl(160 100% 45% / 0.3); }
+    50% { box-shadow: 0 0 20px hsl(160 100% 45% / 0.6); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes terminal-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .terminal-cursor::after {
+    content: '█';
+    animation: terminal-blink 1s step-end infinite;
+    @apply text-primary ml-0.5;
+  }
+}
