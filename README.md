@@ -1,19 +1,48 @@
-# WAVS (Web Application Vulnerability Scanner)
 
-WAVS is a security tool designed to detect common vulnerabilities in web applications such as XSS, SQL Injection, phishing risks, and more.
+# 🛡️ WAVS – Web Application Vulnerability Scanner
 
-## 🚀 Features
+WAVS is a web application security assessment tool designed to
+identify common web vulnerabilities through automated crawling,
+HTTP request analysis, and browser-based security scanning.
 
-* 🔍 Web crawling and scanning
-* 🛡️ XSS (Cross-Site Scripting) detection
-* 💉 SQL Injection detection
-* 🎣 Phishing detection
-* 📡 HTTP header analysis
-* 🌐 Browser-based scanning support
+The project focuses on detecting SQL Injection, Cross-Site
+Scripting (XSS), insecure HTTP headers, and potential phishing risks.
+
+## 🚀 Key Features
+
+- 🔍 Automated Web Crawling – Discovers web pages for security analysis.
+- 🛡️ XSS Detection – Identifies potential cross-site scripting vulnerabilities.
+- 💉 SQL Injection Detection – Checks for SQL injection risks.
+- 🎣 Phishing Risk Detection – Analyzes potential phishing indicators.
+- 📡 HTTP Security Header Analysis – Identifies missing or insecure headers.
+- 🌐 Browser-Based Scanning – Supports automated browser interactions.
+
+## 🛠️ Technology Stack
+
+**Backend:** Python, Flask
+
+**Frontend:** React, TypeScript, HTML, CSS
+
+**Automation:** Selenium
+
+**HTTP & Parsing:** Requests, BeautifulSoup
+
+**Security:** Web Vulnerability Assessment, HTTP Security Testing
+
+## 🏗️ System Architecture
+
+The scanner follows a modular approach:
+
+1. User provides a target web application.
+2. The crawler discovers accessible pages.
+3. Security modules analyze the discovered pages.
+4. Modules check for XSS, SQL Injection, phishing indicators,
+   and insecure HTTP headers.
+5. Findings are collected for review.
 
 ## 📂 Project Structure
 
-```
+```text
 backend/
   scanner/
     browser_scan.py
@@ -25,52 +54,47 @@ backend/
     xss.py
 ```
 
-## 🛠️ Installation
+## ⚙️ Installation
 
-1. Clone the repository:
+Clone the repository:
 
 ```bash
 git clone https://github.com/Sushmadharmaji/WAVS.git
 cd WAVS
 ```
 
-2. Install dependencies:
+Install Python dependencies from the appropriate backend
+directory if a requirements.txt file is available:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## ▶️ Usage
+## ▶️ Running the Project
 
-Run the scanner:
+Refer to the project's actual backend and frontend entry
+points for startup instructions.
 
-```bash
-python main.py
-```
+## 🔐 Security Considerations
 
-(Adjust based on your actual entry file)
-
-## ⚙️ Technologies Used
-
-* Python
-* Web scraping tools
-* Security testing techniques
+- Run security scans only against systems you own or
+  have explicit permission to test.
+- Use controlled testing environments for demonstrations.
+- Treat scanner findings as potential vulnerabilities
+  that require verification.
+- Avoid storing sensitive information in logs or reports.
 
 ## 📌 Future Improvements
 
-* Add UI dashboard
-* Improve detection accuracy
-* Add more vulnerability checks
-* Generate detailed reports
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to fork the repo and submit a pull request.
-
-## 📄 License
-
-This project is open-source and available under the MIT License.
+- Improve vulnerability detection accuracy.
+- Expand security checks.
+- Enhance reporting and visualization.
+- Add automated testing and documentation.
 
 ## 👤 Author
 
-* Sushma Dharmaji
+**Dharmaji Sushma**
+
+Cybersecurity Undergraduate
+
+GitHub: https://github.com/Sushmadharmaji
