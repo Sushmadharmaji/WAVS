@@ -56,26 +56,64 @@ backend/
 
 ## ⚙️ Installation
 
+## ⚙️ Installation & Setup
 
-# Clone the repository
+### Prerequisites
+- Python 3
+- Node.js and npm
+- Git
+
+### 1. Clone the Repository
+```bash
 git clone https://github.com/Sushmadharmaji/WAVS.git
-
-# Open the backend directory
-cd WAVS/backend
-
-# Create a virtual environment
+cd WAVS
+```
+### 2. Backend Setup
+```bash
+cd backend
 python -m venv .venv
+```
 
-# Activate it on Windows
-.venv\Scripts\activate
+Activate on Windows:
+```powershell
+.venv\Scripts\Activate.ps1
+```
 
-# Install dependencies
+Install dependencies:
+```bash
 pip install -r requirements.txt
+```
 
-# Start the backend (if app.py is the entry point)
+Start backend (if `app.py` provides the entry point):
+```bash
 python app.py
+```
 
+### 3. Frontend Setup
 
+Open a second terminal from the project root:
+```bash
+cd web-safe-guard
+npm install
+npm run dev
+```
+
+Open the local URL shown by Vite in your terminal
+(usually http://localhost:5173).
+
+### 4. Available Frontend Commands
+
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Start development server |
+| `npm run build` | Create production build |
+| `npm run lint` | Run ESLint |
+| `npm run test` | Run Vitest tests |
+| `npm run preview` | Preview production build |
+
+> Run security tests only on applications you own
+> or have permission to assess.
+  
 ## ▶️ Running the Project
 
 Refer to the project's actual backend and frontend entry
