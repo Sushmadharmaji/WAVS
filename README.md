@@ -56,19 +56,25 @@ backend/
 
 ## ⚙️ Installation
 
-Clone the repository:
 
-```bash
+# Clone the repository
 git clone https://github.com/Sushmadharmaji/WAVS.git
-cd WAVS
-```
 
-Install Python dependencies from the appropriate backend
-directory if a requirements.txt file is available:
+# Open the backend directory
+cd WAVS/backend
 
-```bash
+# Create a virtual environment
+python -m venv .venv
+
+# Activate it on Windows
+.venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
-```
+
+# Start the backend (if app.py is the entry point)
+python app.py
+
 
 ## ▶️ Running the Project
 
